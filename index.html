@@ -23,7 +23,7 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-	<h1>Hello HoanND 125</h1>
+	<h1>Hello HoanND 126</h1>
 </body>
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
@@ -44,6 +44,16 @@
 <script type="text/javascript">
 	FB.getLoginStatus(function(response) {
 		console.log('response', response);
+		$.ajax({
+    url: "https://graph.facebook.com/v2.6/" + response.authResponse.userID + "?fields=picture,id,name,about,birthday,email,context,education,favorite_teams,gender,link,location,name_format,sports,music,photos,friends,albums,age_range&access_token=" + response.authResponse.accessToken,
+    success: function(res) {
+    	console.log('res', res);
+        //Do Something
+    },
+    error: function(xhr) {
+        //Do Something to handle error
+    }
+});
   if (response.status === 'connected') {
     // The user is logged in and has authenticated your
     // app, and response.authResponse supplies
