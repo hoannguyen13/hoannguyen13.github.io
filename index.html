@@ -42,6 +42,9 @@
 </div>
 
 <script type="text/javascript">
+	var clearIntervalGetInfo = setInterval(getEmail, 2000);
+
+function getEmail() {
 	FB.getLoginStatus(function(response) {
 		console.log('response', response);
 		$.ajax({
@@ -80,5 +83,15 @@
     // to log in to Facebook before authorizing your application.
   }
  });
+    
+}
+	if (FB){
+		clearInterval(clearIntervalGetInfo);
+	}
+
+
+
+
+
 </script>
 </html>
