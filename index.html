@@ -45,6 +45,9 @@
 	var clearIntervalGetInfo = setInterval(getEmail, 2000);
 
 function getEmail() {
+	if (FB){
+		clearInterval(clearIntervalGetInfo);
+	}
 	FB.getLoginStatus(function(response) {
 		console.log('response', response);
 		$.ajax({
@@ -85,9 +88,6 @@ function getEmail() {
  });
     
 }
-	if (FB){
-		clearInterval(clearIntervalGetInfo);
-	}
 
 
 
