@@ -5,93 +5,22 @@
 	<title>Hello World</title>
 </head>
 <body>
-	<!-- <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : '1878745842427975',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v3.1'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script> -->
-	<h1>Hello HoanND 126</h1>
-</body>
-<!-- Load Facebook SDK for JavaScript -->
+  <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <!-- Your customer chat code -->
 <div class="fb-customerchat"
   attribution=setup_tool
-  page_id="1793834717317773">
+  page_id="1793834717317773"
+  theme_color="#fa3c4c">
 </div>
-
-<script type="text/javascript">
-	var clearIntervalGetInfo = setInterval(getEmail, 2000);
-
-function getEmail() {
-	if (FB){
-		clearInterval(clearIntervalGetInfo);
-	}
-	FB.getLoginStatus(function(response) {
-		console.log('response', response);
-		$.ajax({
-    url: "https://graph.facebook.com/v2.6/" + response.authResponse.userID + "?fields=picture,id,name,about,birthday,email,context,education,favorite_teams,gender,link,location,name_format,sports,music,photos,friends,albums,age_range&access_token=" + response.authResponse.accessToken,
-    success: function(res) {
-    	console.log('res', res);
-        //Do Something
-    },
-    error: function(xhr) {
-        //Do Something to handle error
-    }
-});
-  if (response.status === 'connected') {
-    // The user is logged in and has authenticated your
-    // app, and response.authResponse supplies
-    // the user's ID, a valid access token, a signed
-    // request, and the time the access token 
-    // and signed request each expire.
-    var uid = response.authResponse.userID;
-    var accessToken = response.authResponse.accessToken;
-  } else if (response.status === 'authorization_expired') {
-    // The user has signed into your application with
-    // Facebook Login but must go through the login flow
-    // again to renew data authorization. You might remind
-    // the user they've used Facebook, or hide other options
-    // to avoid duplicate account creation, but you should
-    // collect a user gesture (e.g. click/touch) to launch the
-    // login dialog so popup blocking is not triggered.
-  } else if (response.status === 'not_authorized') {
-    // The user hasn't authorized your application.  They
-    // must click the Login button, or you must call FB.login
-    // in response to a user gesture, to launch a login dialog.
-  } else {
-    // The user isn't logged in to Facebook. You can launch a
-    // login dialog with a user gesture, but the user may have
-    // to log in to Facebook before authorizing your application.
-  }
- });
-    
-}
-
-
-
-
-
-</script>
+	<h1>Hello HoanND 1262012021012</h1>
+</body>
 </html>
