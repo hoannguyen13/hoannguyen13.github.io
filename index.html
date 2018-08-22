@@ -4,9 +4,19 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<title>Hello World</title>
   <script type="text/javascript">
-    window.addEventListener("message", function(msg){
-      console.log('msg', msg);
+    $(document).ready(function() {
+  $.ajaxSetup({ cache: true });
+  $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+    FB.init({
+      appId: '278128009454515',
+      version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+    });     
+    $('#loginbutton,#feedbutton').removeAttr('disabled');
+    FB.getLoginStatus(function(resp){
+      console.log('resp', resp);
     });
+  });
+});
   </script>
 </head>
 <body>
