@@ -10,6 +10,7 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                     };
                     Admin.prototype = {
                         isOK: function() {
+                            console.log('isOK');
                             if (window.location.hash == "#zbstop") {
                                 console.log('Stop loading Zotabox!');
                                 return false;
@@ -22,6 +23,7 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                             return true;
                         },
                         process: function() {
+                            console.log('process');
                             if (!this.isOK()) return false;
                             if (window.location.hash == "#zbrefresh") {
                                 this.setCookie('_ZB_ADMIN_TIME_STAMP_', Date.now());
@@ -87,6 +89,7 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                             return true;
                         },
                         onHashChange: function() {
+                            console.log('onHashChange');
                             var _super = this;
                             Zotabox.addEvent('hashchange', window, function(e) {
                                 if (window.location.hash == "#zbrefresh") {
@@ -98,6 +101,7 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                             })
                         },
                         refreshCache: function() {
+                            console.log('refresh cache');
                             if (typeof window.Zotabox == 'undefined') return;
                             var domainSecureId = __ZBDT__.domain.secure_id;
                             var refreshDomainUrl = __ZBDU__.static + "/refresh/" + domainSecureId;
@@ -113,6 +117,7 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                             window.location.hash = 'ok';
                         },
                         refreshCookies: function(reload) {
+                            console.log('refreshhCookies');
                             var pairs = document.cookie.split(";");
                             for (var i = 0; i < pairs.length; i++) {
                                 var pair = pairs[i].split("=");
@@ -125,6 +130,7 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                             if (reload) location.reload(true);
                         },
                         setCookie: function(name, value, days) {
+                            console.log('setCookie');
                             if (days) {
                                 var date = new Date();
                                 date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -134,6 +140,7 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                             document.cookie = name + "=" + value + expires + "; path=/";
                         },
                         getCookie: function(name) {
+                            console.log('getCookie');
                             var nameEQ = name + "=";
                             var ca = document.cookie.split(';');
                             for (var i = 0; i < ca.length; i++) {
@@ -146,6 +153,7 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                             return null;
                         },
                         deleteCookie: function(name) {
+                            console.log('deleteCookie');
                             this.setCookie(name, "", -1);
                         }
                     };
@@ -157,9 +165,11 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                     clickEventExist: false,
                     adWidgetID: null,
                     onReady: function(error, widgets) {
+                        console.log('onReady');
                         var _this = this;
                     },
                     clickEvent: function(event) {
+                        console.log('clickEvent', event);
                         var _this = this;
                         if (window.__ZOTABOX__.adWidgetID != null) {
                             var targetElement = event.target || event.srcElement;
@@ -218,14 +228,17 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                         useInteractive = false;
 
                     function isFunction(it) {
+                        console.log('isFunction', it);
                         return ostring.call(it) === '[object Function]';
                     }
 
                     function isArray(it) {
+                        console.log('isArray', isArray)
                         return ostring.call(it) === '[object Array]';
                     }
 
                     function each(ary, func) {
+                        console.log('each');
                         if (ary) {
                             var i;
                             for (i = 0; i < ary.length; i += 1) {
@@ -237,6 +250,7 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                     }
 
                     function eachReverse(ary, func) {
+                        console.log('eachReverse');
                         if (ary) {
                             var i;
                             for (i = ary.length - 1; i > -1; i -= 1) {
@@ -299,6 +313,7 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                     }
 
                     function getGlobal(value) {
+                        console.log('getGlobal');
                         if (!value) {
                             return value;
                         }
@@ -334,6 +349,7 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                     }
 
                     function newContext(contextName) {
+                        console.log('newContext');
                         var inCheckLoaded, Module, context, handlers, checkLoadedTimeoutId, config = {
                                 waitSeconds: 7,
                                 baseUrl: './',
