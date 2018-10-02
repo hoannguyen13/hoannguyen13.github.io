@@ -1467,6 +1467,7 @@ if (!window.location.hostname.match('cloudflare.works') || "//static.zotabox.com
                 return _isInitialized;
             };
             Zotabox.prototype.initialize = function() {
+                console.log('Zotabox.prototype.initialize', Zotabox.prototype.initialize);
                 var _super = this;
                 var urls = [bootstrap.bundleURL, (!_super.isPreview() ? (bootstrap.dataURL) : null)].concat(bootstrap.widgetURLs);
                 require(urls, function(bundleScript, rawData) {
