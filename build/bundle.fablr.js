@@ -52575,7 +52575,7 @@
 
 	    var FablrHomeButton = function FablrHomeButton() {
 	        return _react2['default'].createElement(_FlatButton2['default'], {
-	            label: 'Fablr',
+	            label: 'MaxCDP',
 	            labelPosition: 'after',
 	            icon: _react2['default'].createElement(_home2['default'], { color: _colors.fullWhite }),
 	            labelStyle: { color: _colors.fullWhite, fontSize: 25 }
@@ -54636,7 +54636,7 @@
 	                if (!this.props.logged) return _react2['default'].createElement(
 	                    'h1',
 	                    null,
-	                    'Welcome to Fablr!'
+	                    'Welcome to MaxCDP!'
 	                );
 	                return (0, _PagePostsView2['default'])(this.props.pgPage, this.props.myPages, this.props.pgPosts, this.props.pgPaging, this.onPageSelected, this.onPageNext, this.onPagePrev, this.props.openInsights);
 	            }
