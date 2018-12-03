@@ -57828,6 +57828,7 @@
 	    return _react2['default'].createElement(
 	        _reactFlexboxGrid.Row,
 	        null,
+	        'Feature in development',
 	        _react2['default'].createElement(
 	            _reactFlexboxGrid.Col,
 	            { xs: 12, md: 12 },
