@@ -54477,7 +54477,7 @@
 	            function onPageSelected(e, k, page) {
 	                var _this2 = this;
 
-	                var uri = '/' + String(page.id) + '/promotable_posts?fields=reactions.summary(true),message,link,scheduled_publish_time,is_published,created_time';
+	                var uri = '/' + String(page.id) + '/posts?fields=reactions.summary(true),message,link,scheduled_publish_time,is_published,created_time';
 	                this.props.pageSelected(page);
 	                var callback = function () {
 	                    function callback(response) {
